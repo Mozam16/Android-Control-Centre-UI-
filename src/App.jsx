@@ -79,7 +79,7 @@ export default function App() {
               e.stopPropagation();
               setShowUI(true);
             }}
-            className="px-7 py-4 rounded-full bg-white text-black font-semibold shadow-xl"
+            className="px-7 py-4 rounded-full bg-white text-black shadow-xl hover:cursor-pointer font-semibold hover:border-2 hover:border-gray-700 hover:bg-gray-200"
           >
             Open Control Center
           </motion.button>
@@ -90,7 +90,7 @@ export default function App() {
             onClick={(e) => e.stopPropagation()}
             animate={{ y: expanded ? 35 : 0 }}
             transition={{ duration: 0.35 }}
-            className="w-90 rounded-3xl text-white"
+            className="w-90 px-3 md:px-0 rounded-3xl text-white"
           >
             {/* TOP SECTION */}
             <div className="grid grid-cols-2 gap-4">
@@ -107,7 +107,7 @@ export default function App() {
                   onTap={() => toggle("bt")}
                   onHold={() => setPanel("bluetooth")}
                 />
-                <div className="col-span-2 bg-white/10 rounded-2xl p-3 flex items-center gap-3">
+                <div className="col-span-2 bg-white/10 rounded-4xl p-3 flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                     ⇅
                   </div>
@@ -145,8 +145,8 @@ export default function App() {
             </div>
 
             {/* MID SECTION */}
-            <div className="flex gap-3 mt-4">
-              <div className="flex flex-col gap-3 w-40">
+            <div className="flex justify-between gap-3 md:gap-0 mt-4 ">
+              <div className="flex flex-col gap-3 w-43  ">
                 <div className="bg-black/50 rounded-3xl p-3 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
                     <Droplets size={16} className="text-white" />
@@ -156,7 +156,7 @@ export default function App() {
                     <p className="text-xs text-gray-400">Used today</p>
                   </div>
                 </div>
-                <div className="flex gap-8">
+                <div className="flex justify-between">
                   <CircleToggle
                     icon={Plane}
                     active={active.plane}
@@ -170,7 +170,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="flex gap-10">
+              <div className="flex justify-between w-43">
                 <Slider value={brightness} setValue={setBrightness} icon={Sun} />
                 <Slider value={volume} setValue={setVolume} icon={Volume2} />
               </div>
